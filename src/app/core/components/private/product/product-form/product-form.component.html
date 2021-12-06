@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Product</title>
+</head>
+
+<!--LIBRERIAS -->
+<!--Librería cdn que provee bootstrap, permite acceder a todos los elementos de diseño de la librería-->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+
+<div class="col-lg-6 offset-sm-3">
+    <form (ngSubmit)= "createProduct()" #form="ngForm" class="form-horizontal"  >
+        
+        <fieldset>
+        
+        <!-- Form Name -->
+        <!-- <legend>{{edit?"Update Product":"Create Product"}}</legend> -->
+        
+       
+        
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-12 control-label" for="category">Product Category</label>  
+          <div class="col-md-12">
+          <input id="category" name="category" type="text"  [(ngModel)]="product.category"
+          placeholder="Product Category" class="form-control input-md" required="">
+            
+          </div>
+        </div>
+        
+         <!-- Text input-->
+         <div class="form-group">
+            <label class="col-md-12 control-label" for="name">Product name</label>  
+            <div class="col-md-12">
+            <input id="name" name="name" type="text" [(ngModel)]="product.name"
+            placeholder="Product name" class="form-control input-md" required="">
+              
+            </div>
+          </div>
+
+          <!-- Text input-->
+         <div class="form-group">
+            <label class="col-md-12 control-label" for="unitValue">Product unitValue</label>  
+            <div class="col-md-12">
+            <input id="unitValue" name="unitValue" type="number" [(ngModel)]="product.unitValue"
+            placeholder="Product unitValue" class="form-control input-md" required="">
+              
+            </div>
+          </div>
+
+          <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-12 control-label" for="stock">Product stock</label>  
+            <div class="col-md-12">
+            <input id="stock" name="stock" type="number"  [(ngModel)]="product.stock"
+            placeholder="Product stock" class="form-control input-md" required="">
+              
+            </div>
+          </div>
+
+            <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-12 control-label" for="stock">Product description</label>  
+            <div class="col-md-12">
+            <input id="description" name="description" type="text"  [(ngModel)]="product.description"
+            placeholder="Product description" class="form-control input-md" required="">
+              
+            </div>
+          </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-12 control-label" for="image">Product Image</label>  
+          <div class="col-md-12">
+          <input id="image" name="image" type="text"  [(ngModel)]="product.image"
+          placeholder="Product Image" class="form-control input-md" required="">
+            
+          </div>
+        </div>
+        
+        <!-- Button (Double) -->
+        <div class="form-gro+*9-++++++up">
+          <label class="col-md-12 control-label" for="sumit"></label>
+          <div class="col-md-12">
+            <button id="sumit" name="sumit" class="btn btn-primary">Save</button>
+            <a id="cancel" name="cancel" class="btn btn-danger" [routerLink]="['/product/list']" routerLinkActive="router-link-active" >Cancel</a>
+          </div>
+        </div>
+        
+        </fieldset>
+        </form>
+        
+</div>

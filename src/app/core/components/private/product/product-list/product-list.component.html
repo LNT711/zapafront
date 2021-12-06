@@ -1,0 +1,63 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+         
+          
+          <li class="nav-item">
+            
+            <a [routerLink]="['/product/create']" routerLinkActive="router-link-active"  class="btn btn-info">Create Product</a>
+          </li>
+        </ul>
+        
+      </div>
+    </div>
+  </nav>
+  <br/>
+<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Category</th>
+        <th scope="col">Photo</th>
+        <th scope="col">Unit Value  </th>
+        <th scope="col">Stock</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of productList">
+        <th scope="row">{{item.name}}</th>
+        <td>{{item.category}}</td>
+        <td>{{item.image?"Yes":"No Present"}}</td>
+        <td>$ {{item.unitValue}}</td>
+        <td>{{item.stock}}</td>
+        
+          <a (click)="deleteProduct(item._id!)" class="btn btn-danger">Delete</a>
+          <a [routerLink]="['product/id/:productId', item._id!]" routerLinkActive="router-link-active"  class="btn btn-info">Edit</a>
+        
+      </tr>
+ 
+    </tbody>
+</table>
+
+<br/>
+
+<div class="row">
+
+    <div class="col-4" *ngFor="let item of productList" >
+
+        <div class="card" style="max-width: 18rem; min-height: 400px;" >
+            <img class="card-img-top" style="max-height: 200px; "src="{{item.image}}" alt="Card image cap">
+            <div class="card-body">
+            <h5 class="card-title">{{item.name}}</h5>
+            <p class="card-text"> {{item.category}}</p>
+            <p class="card-text"> $ {{item.unitValue}}</p>
+            <a (click)="deleteProduct(item._id!)" class="btn btn-danger">Delete</a>
+            <a [routerLink]="['/product/id/:productId', item._id!]" routerLinkActive="router-link-active"  class="btn btn-info">Edit</a>
+
+            </div>
+
+        </div>
+    </div>
+</div>
