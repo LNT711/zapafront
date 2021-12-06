@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { InvoiceListComponent } from './core/components/private/invoice/invoice-list/invoice-list.component';
-import { PrivateLayoutComponent } from './core/components/private/layout/private-layout/private-layout.component';
-import { ProductFormComponent } from './core/components/private/product/product-form/product-form.component';
-import { ProductListComponent } from './core/components/private/product/product-list/product-list.component';
+import { InvoiceListComponent } from './core/components/public/invoice/invoice-list/invoice-list.component';
+import { PrivateLayoutComponent } from './core/components/public/layout/private-layout/private-layout.component';
+import { ProductFormComponent } from './core/components/public/product/product-form/product-form.component';
+import { ProductListComponent } from './core/components/public/product/product-list/product-list.component';
 import { HomeComponent } from './shared/home/home.component';
 
 const routes: Routes = [
