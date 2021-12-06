@@ -13,10 +13,16 @@ const routes: Routes = [
     component: PrivateLayoutComponent,
     children: [ 
       {
-        path: 'index.html',
+        path: '',
         pathMatch: 'full',
         redirectTo: 'admin/product/list'
       },
+      {
+        path: 'index.html',
+        pathMatch: 'full',
+        redirectTo: 'src\app\product\product-list\product-list.component.html'
+      },
+
       {
         path:'product/list',
         component: ProductListComponent
